@@ -1,0 +1,114 @@
+/* Custom CSS for EduCollege */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #f59e0b;
+    --dark-bg: #1e293b;
+    --light-bg: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-bg);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+.nav-link {
+    color: #475569 !important;
+    transition: color 0.3s;
+}
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Utilities */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Notices Scrolling */
+.notice-marquee {
+    background-color: white;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 10px 15px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 10;
+    border-radius: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.notice-marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 25s linear infinite;
+}
+.notice-marquee span:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* Gallery Lightbox */
+.gallery-img {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.gallery-img:hover {
+    opacity: 0.8;
+}
+
+/* Faculty Image */
+.faculty-img {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
