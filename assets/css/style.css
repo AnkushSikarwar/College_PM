@@ -28,10 +28,11 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color) !important;
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+/* Hero Section & Carousel */
+.hero-section, .hero-slide {
     height: 80vh;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     color: white;

@@ -126,21 +126,64 @@ include 'includes/header.php';
             <div class="mx-auto bg-primary mt-2" style="height: 4px; width: 60px; border-radius: 2px;"></div>
         </div>
         <div class="row g-4">
-            <?php foreach($courses as $course): ?>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <img src="assets/images/<?php echo htmlspecialchars($course['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['title']); ?>" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <div class="card-body">
-                        <h5 class="card-title fw-bold"><?php echo htmlspecialchars($course['title']); ?></h5>
-                        <p class="card-text text-muted small"><?php echo htmlspecialchars(substr($course['description'], 0, 100)) . '...'; ?></p>
-                        <div class="d-flex justify-content-between align-items-center mt-3">
-                            <span class="badge bg-light text-dark border"><i class="far fa-clock me-1"></i><?php echo htmlspecialchars($course['duration']); ?></span>
-                            <a href="course-detail.php?id=<?php echo $course['id']; ?>" class="btn btn-sm btn-outline-primary">Learn More</a>
+            <?php if(count($courses) > 0): ?>
+                <?php foreach($courses as $course): ?>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/images/<?php echo htmlspecialchars($course['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($course['title']); ?>" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold"><?php echo htmlspecialchars($course['title']); ?></h5>
+                            <p class="card-text text-muted small"><?php echo htmlspecialchars(substr($course['description'], 0, 100)) . '...'; ?></p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-light text-dark border"><i class="far fa-clock me-1"></i><?php echo htmlspecialchars($course['duration']); ?></span>
+                                <a href="course-detail.php?id=<?php echo $course['id']; ?>" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <!-- Placeholder Courses if DB is empty -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Computer Science">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">B.Sc. Computer Science</h5>
+                            <p class="card-text text-muted small">Learn programming, data structures, and software engineering from industry experts.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-light text-dark border"><i class="far fa-clock me-1"></i>4 Years</span>
+                                <a href="courses.php" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Business Administration">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Business Administration</h5>
+                            <p class="card-text text-muted small">Master the fundamentals of business, finance, and management in our comprehensive BBA program.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-light text-dark border"><i class="far fa-clock me-1"></i>3 Years</span>
+                                <a href="courses.php" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Data Science">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">M.Sc. Data Science</h5>
+                            <p class="card-text text-muted small">Dive deep into machine learning, big data analytics, and artificial intelligence.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="badge bg-light text-dark border"><i class="far fa-clock me-1"></i>2 Years</span>
+                                <a href="courses.php" class="btn btn-sm btn-outline-primary">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="text-center mt-5">
             <a href="courses.php" class="btn btn-primary px-4 py-2 rounded-pill">View All Courses <i class="fas fa-arrow-right ms-2"></i></a>
