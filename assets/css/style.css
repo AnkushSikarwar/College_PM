@@ -71,25 +71,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Notices Scrolling */
-.notice-marquee {
-    background-color: white;
-    border-left: 4px solid var(--primary-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    padding: 10px 15px;
+.notice-section {
     margin-top: -25px;
     position: relative;
     z-index: 10;
-    border-radius: 8px;
-    overflow: hidden;
-    white-space: nowrap;
 }
-.notice-marquee span {
+.notice-marquee-wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.notice-marquee-content {
     display: inline-block;
     padding-left: 100%;
     animation: marquee 25s linear infinite;
 }
-.notice-marquee span:hover {
+.notice-marquee-content:hover {
     animation-play-state: paused;
+}
+.notice-label {
+    white-space: nowrap;
 }
 
 @keyframes marquee {
